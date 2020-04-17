@@ -6,6 +6,17 @@ namespace PIM.Services
 {
     public static class AluguelManager
     {
+        public static bool Login(string user, string senha)
+        {
+            var admin = BaseDeDados.Admins.FirstOrDefault(u => u.Senha == senha && u.Usuario == user);
+            if (admin != null)
+            {
+                Console.WriteLine("Bem vindo " + admin.Nome);
+                return true;
+            }
+            return false;
+        }
+
         public static bool Alugar(Professor professor)
         {
             Console.WriteLine("Qual item deseja alugar? 1-Notebook 2-TV com VCR 3-TV com DVD 4-DataShow 5-Sistema de Audio");

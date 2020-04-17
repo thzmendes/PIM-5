@@ -6,9 +6,13 @@ namespace PIM.Services
 {
     public static class BaseDeDados
     {
+        public static List<Administrador> Admins = new List<Administrador>()
+        {
+            new Administrador(){Nome = "Thomas",Usuario = "tmendes",Senha="senha123"}
+        };
         public static List<Professor> Professores = new List<Professor>()
         {
-            new Professor(){CPF= 00000000000, AlugueisEmAberto = new List<Aluguel>() ,Matéria= "Matematica",Nome = "Rogério"},
+            new Professor(){CPF= 00000000000, AlugueisEmAberto = new List<Aluguel>(){ new Aluguel() {DataRetirada= new System.DateTime(1999,1,02) ,Equipamento = new Notebook()} } ,Matéria= "Matematica",Nome = "Rogério"},
             new Professor(){CPF= 11111111111, AlugueisEmAberto = new List<Aluguel>() ,Matéria= "Português",Nome = "Rosana"}
         };
 
